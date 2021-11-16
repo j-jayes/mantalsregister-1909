@@ -11,7 +11,8 @@ knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 library(rvest)
 
-knitr::purl("code/stockholm_archive_scraper.Rmd", documentation = 2)
+# run this before export to github actions
+# knitr::purl("code/stockholm_archive_scraper.Rmd", documentation = 2)
 
 #' 
 #' ## Purpose
@@ -21,18 +22,18 @@ knitr::purl("code/stockholm_archive_scraper.Rmd", documentation = 2)
 #' ### Robots.txt
 #' 
 ## ---------------------------------------------------------------------------------------------
-library(robotstxt)
-get_robotstxt("https://stadsarkivet.stockholm/")
+# library(robotstxt)
+# get_robotstxt("https://stadsarkivet.stockholm/")
 
 #' 
 #' There's nothing here, so we can proceed.
 #' 
 #' ### Trying for mantalsregister 1909
 #' 
-#' Want to get the table with the first elements
+#' Want to get the table with the first elements - function
 #' 
 ## ---------------------------------------------------------------------------------------------
-url <- "https://sok.stadsarkivet.stockholm.se/Databas/mantalsregister-1909/Sok?sidindex=20"
+# url <- "https://sok.stadsarkivet.stockholm.se/Databas/mantalsregister-1909/Sok?sidindex=20"
 
 get_table_data <- function(url) {
   html <- read_html(url)
@@ -71,17 +72,32 @@ get_table_data <- function(url) {
 
 
 #' 
+#' List of all the links
+#' 
 ## ---------------------------------------------------------------------------------------------
 start_page <- 0
 n_pages <- 11679
 
 list_of_pages <- tibble(url = paste0("https://sok.stadsarkivet.stockholm.se/Databas/mantalsregister-1909/Sok?sidindex=",
-                                     start_page:n_pages))
+                                     start_page:n_pages),
+                        # make a page number just in case we want to check back later
+                        # store it just as a number as this is small for file size sake.
+                        page = start_page:n_pages)
 
-df_test <- list_of_pages %>% 
-  head(5) %>% 
-  mutate(data = map(url, possibly(get_table_data, "failed")))
+#' 
+#' purrr::map takes our url and applies the function to it methodically.
+#' 
+## ---------------------------------------------------------------------------------------------
+df <- list_of_pages %>% 
+  # head(2) %>%
+  mutate(data = map(url, possibly(get_table_data, "failed"))) %>% 
+  # we don't have to keep the url as it provides no more information than page.
+  select(!url)
 
-
+#' 
+#' Save data!
+#' 
+## ---------------------------------------------------------------------------------------------
+write_rds("data/df.rds", compress = "gz")
 
 #' 

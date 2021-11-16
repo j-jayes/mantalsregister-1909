@@ -12,6 +12,10 @@ It could be interesting to do some geo-coding of this data to look at how techno
 
 It is digitized and in a nice table on the website of Stockholm city archives. 
 
+This is what it looks like:
+
+![](images/table.PNG)
+
 ## Skills
 
 I want to learn how to aggregate by region where there are points on a map and calculate averages - can perhaps look at the book by Kyle walker called [Analyzing US Census Data: Methods, Maps, and Models in R](https://walker-data.com/census-r/).

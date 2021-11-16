@@ -72,6 +72,8 @@ get_table_data <- function(url) {
 
 ```
 
+List of all the links
+
 ```{r}
 start_page <- 0
 n_pages <- 11679
@@ -81,13 +83,21 @@ list_of_pages <- tibble(url = paste0("https://sok.stadsarkivet.stockholm.se/Data
                         # make a page number just in case we want to check back later
                         # store it just as a number as this is small for file size sake.
                         page = start_page:n_pages)
+```
 
+purrr::map takes our url and applies the function to it methodically.
+
+```{r}
 df <- list_of_pages %>% 
-  head(2) %>%
+  # head(2) %>%
   mutate(data = map(url, possibly(get_table_data, "failed"))) %>% 
   # we don't have to keep the url as it provides no more information than page.
   select(!url)
+```
 
-write_rds("data/df.rds")
+Save data!
+
+```{r}
+write_rds("data/df.rds", compress = "gz")
 ```
 
