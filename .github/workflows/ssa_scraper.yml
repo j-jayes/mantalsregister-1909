@@ -5,8 +5,8 @@ Controls when the action will run.
 
 on:
   pull_request:
-    branches: main
-
+      branches:
+        - main
 jobs:
   autoscrape:
     # The type of runner that the job will run on
