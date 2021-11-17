@@ -62,7 +62,7 @@ get_table_data <- function(url) {
     select(1:8)
   
   # sleep a little between each request
-  Sys.sleep(rnorm(1, 2, .2))
+  # Sys.sleep(rnorm(1, 2, .2))
   
   table
 }
