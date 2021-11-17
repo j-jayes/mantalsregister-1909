@@ -98,6 +98,6 @@ df <- list_of_pages %>%
 #' Save data!
 #' 
 ## -----------------------------------------------------------------------------------
-write_rds("data/df.rds", compress = "gz")
+df %>% write_rds("data/df.rds", compress = "gz")
 
 #' 
