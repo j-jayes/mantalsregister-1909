@@ -38,7 +38,7 @@ Want to get the table with the first elements - function
 get_table_data <- function(url) {
   html <- read_html(url)
   
-  message(paste0("Getting data from", url))
+  message(paste0("Getting data from ", url))
   
   table <- html %>%
     html_node(".table") %>%
@@ -89,7 +89,7 @@ purrr::map takes our url and applies the function to it methodically.
 
 ```{r}
 df <- list_of_pages %>% 
-  head(3) %>%
+  filter(between(page, 10001, 11679)) %>%
   mutate(data = map(url, possibly(get_table_data, "failed"))) %>% 
   # we don't have to keep the url as it provides no more information than page.
   select(!url)
@@ -98,6 +98,12 @@ df <- list_of_pages %>%
 Save data!
 
 ```{r}
-df %>% write_rds("data/df.rds", compress = "gz")
+
+df <- df %>% 
+  filter(!data == "failed")
+
+st <- format(Sys.time(), "%Y-%m-%d-%I-%M-%p") 
+
+df %>% write_rds(paste0("data/df", st, ".rds"), compress = "gz")
 ```
 

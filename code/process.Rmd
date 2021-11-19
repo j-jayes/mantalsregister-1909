@@ -1,0 +1,102 @@
+---
+title: "Untitled"
+author: "JJayes"
+date: "19/11/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+```
+
+## Purpose
+
+Take in all the scarped data, process it.
+
+### Reading in data
+
+```{r}
+filenames <- list.files("data", pattern = "*.rds", full.names = TRUE) %>% as_tibble() %>% 
+  filter(value != "data/df.rds") %>% 
+  rename(filename = value)
+```
+
+```{r}
+df <- filenames %>% 
+  mutate(value = map(filename, read_rds))
+
+df <- df %>% 
+  select(value) %>% 
+  unnest(value) %>% 
+  unnest(data)
+```
+
+### Fix readings
+
+```{r}
+df <- df %>% 
+  mutate(born = parse_number(born))
+```
+
+```{r}
+df <- df %>% 
+  mutate(year_of_birth = str_sub(born, 1, 4),
+         year_of_birth = parse_number(year_of_birth))
+
+
+df %>% 
+  filter(year_of_birth > 1800) %>% 
+  mutate(title = fct_lump(title, 12)) %>% 
+  ggplot(aes(year_of_birth, fill = title)) +
+  geom_density() +
+  facet_wrap(~ title)
+```
+
+```{r}
+library(ggridges)
+
+df %>% 
+  filter(year_of_birth > 1800) %>% 
+  mutate(title = fct_lump(title, 12),
+         title = fct_reorder(title, year_of_birth)) %>% 
+  ggplot(aes(year_of_birth, fill = title, y = title)) +
+  geom_density_ridges() 
+```
+
+### Addresses
+
+Plan - get just streets - collapse - consolidate, reconnect
+
+```{r}
+df %>% 
+  select(address) %>% 
+  count(address, sort = T)
+```
+
+```{r}
+df %>% 
+  count(title, sort = T)
+```
+
+
+```{r}
+append_f <- function(tbl, filename){
+  
+  df <- read_rds(filename)
+  
+  tbl %>% 
+    bind_rows(df)
+  
+}
+
+df <- tibble(page = 0,
+             data = list(0))
+
+
+filenames %>% 
+  mutate(value = map(filename, ~ append_f(df)))
+
+
+```
+
