@@ -3,7 +3,7 @@ name: autoscrape
 
 # Controls when the action will run.
 on:
-  pull_request:
+  push:
       branches:
         - main
 jobs:
@@ -30,6 +30,7 @@ jobs:
       run: |
         git config --local user.name github-actions
         git config --local user.email "actions@github.com"
+        git checkout main
         git pull
         git add data/*
         git commit -am "NICE! GH ACTION Autorun $(date)"
