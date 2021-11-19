@@ -89,7 +89,7 @@ list_of_pages <- tibble(url = paste0("https://sok.stadsarkivet.stockholm.se/Data
 #' 
 ## ----------------------------------------------------------------------------------------------------------
 df <- list_of_pages %>% 
-  head(2) %>%
+  head(3) %>%
   mutate(data = map(url, possibly(get_table_data, "failed"))) %>% 
   # we don't have to keep the url as it provides no more information than page.
   select(!url)
