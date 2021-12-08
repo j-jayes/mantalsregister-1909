@@ -48,6 +48,10 @@ df <- df %>%
 df %>% 
   filter(year_of_birth > 1800) %>% 
   mutate(title = fct_lump(title, 12)) %>% 
+  count(title, sort = T)
+
+
+
   ggplot(aes(year_of_birth, fill = title)) +
   geom_density() +
   facet_wrap(~ title)
@@ -64,6 +68,12 @@ df %>%
   geom_density_ridges() 
 ```
 
+### Write out now
+
+```{r}
+# df %>% write_rds(here("data", "df_compiled.rds"), compress = "gz")
+```
+
 ### Addresses
 
 Plan - get just streets - collapse - consolidate, reconnect
@@ -77,26 +87,5 @@ df %>%
 ```{r}
 df %>% 
   count(title, sort = T)
-```
-
-
-```{r}
-append_f <- function(tbl, filename){
-  
-  df <- read_rds(filename)
-  
-  tbl %>% 
-    bind_rows(df)
-  
-}
-
-df <- tibble(page = 0,
-             data = list(0))
-
-
-filenames %>% 
-  mutate(value = map(filename, ~ append_f(df)))
-
-
 ```
 
