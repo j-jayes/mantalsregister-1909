@@ -5,26 +5,67 @@ date: "08/12/2021"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r}
+library(tidyverse)
 ```
 
-## R Markdown
+## Purpose
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+I'm interested in geographic homogeneity among residents of Stockholm in 1909. 
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+The Stockholm city archive have got data on individuals from 1909 with name, occupation, and residential address.
 
-```{r cars}
-summary(cars)
+We can therefore have a look at think kinds of occupational segmentation that occurs. We also have data on firm location in a similar year. We can look at who lives furthest from the nice areas and such. 
+
+What is the reason for doing this? Data is accessible, looks really fun - a nice ML problem that will be fun to get right.
+
+### Process
+
+I have scraped the data on the residents of stockholm in 1909. What I need to do now is assign the occupations - written as strings - to SES scores. 
+
+I have found I think a clever way to do this. Can use the 1910 census data as training data for the ML model. 
+
+Process census data and Mantalslängder data. 
+
+### Read in data
+
+```{r}
+df <- read_rds(here::here("data", "df_occstring_occhisco.rds"))
+
+df %>% 
+  count(OCCHISCO, sort = T)
 ```
 
-## Including Plots
+What do we do about missing hisco codes??
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r}
+df %>% 
+  filter(OCCHISCO == 99999)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+Big chunk - maybe exclude them?!
+
+### Assign ses to training data
+
+```{r}
+library(hisco)
+
+
+df <- df %>% 
+  mutate(ses = hisco_to_ses(OCCHISCO))
+
+df %>% 
+  filter(!is.na(ses)) %>% 
+  count(ses, OCCSTRNG, sort = T)
+
+```
+
+
+### Try with the ML model on this data alone
+
+```{r}
+df_mod <- df %>% 
+  filter(!is.na(ses)) %>% 
+  select()
+```
+
