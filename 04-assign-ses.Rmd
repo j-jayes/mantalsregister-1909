@@ -21,7 +21,7 @@ What is the reason for doing this? Data is accessible, looks really fun - a nice
 
 ### Process
 
-I have scraped the data on the residents of stockholm in 1909. What I need to do now is assign the occupations - written as strings - to SES scores. 
+I have scraped the data on the residents of Stockholm in 1909. What I need to do now is assign the occupations - written as strings - to SES scores. 
 
 I have found I think a clever way to do this. Can use the 1910 census data as training data for the ML model. 
 
@@ -67,5 +67,10 @@ df %>%
 df_mod <- df %>% 
   filter(!is.na(ses)) %>% 
   select()
+```
+
+
+```{r}
+
 ```
 
