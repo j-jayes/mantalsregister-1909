@@ -1,0 +1,76 @@
+---
+title: "04-assign-ses"
+author: "JJayes"
+date: "08/12/2021"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+```
+
+## Purpose
+
+I'm interested in geographic homogeneity among residents of Stockholm in 1909. 
+
+The Stockholm city archive have got data on individuals from 1909 with name, occupation, and residential address.
+
+We can therefore have a look at think kinds of occupational segmentation that occurs. We also have data on firm location in a similar year. We can look at who lives furthest from the nice areas and such. 
+
+What is the reason for doing this? Data is accessible, looks really fun - a nice ML problem that will be fun to get right.
+
+### Process
+
+I have scraped the data on the residents of Stockholm in 1909. What I need to do now is assign the occupations - written as strings - to SES scores. 
+
+I have found I think a clever way to do this. Can use the 1910 census data as training data for the ML model. 
+
+Process census data and Mantalslängder data. 
+
+### Read in data
+
+```{r}
+df <- read_rds(here::here("data", "df_occstring_occhisco.rds"))
+
+df %>% 
+  count(OCCHISCO, sort = T)
+```
+
+What do we do about missing hisco codes??
+
+```{r}
+df %>% 
+  filter(OCCHISCO == 99999)
+```
+
+Big chunk - maybe exclude them?!
+
+### Assign ses to training data
+
+```{r}
+library(hisco)
+
+
+df <- df %>% 
+  mutate(ses = hisco_to_ses(OCCHISCO))
+
+df %>% 
+  filter(!is.na(ses)) %>% 
+  count(ses, OCCSTRNG, sort = T)
+
+```
+
+
+### Try with the ML model on this data alone
+
+```{r}
+df_mod <- df %>% 
+  filter(!is.na(ses)) %>% 
+  select()
+```
+
+
+```{r}
+
+```
+

@@ -22,7 +22,7 @@ Start with ingesting the data from the website.
 
 ```{r}
 library(robotstxt)
-get_robotstxt("https://stadsarkivet.stockholm/")
+get_robotstxt("https://stadsarkivet.stockholm")
 ```
 
 There's nothing here, so we can proceed.
