@@ -58,7 +58,10 @@ df <- df %>%
 ## Export data for Anton
 
 ```{r}
+library(readxl)
 
+df %>% 
+  write_excel_csv("data/export_for_Anton_1.csv")
 ```
 
 
