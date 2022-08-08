@@ -68,14 +68,41 @@ get_table_data <- function(url) {
 
 ```
 
-List of all the links
+Get n pages
 
 ```{r}
+get_n_pages <- function(url) {
+  html <- read_html(url)
+
+  n_hits <- html %>%
+    html_nodes(".antaltraffar-div") %>%
+    html_text() %>%
+    str_squish() %>%
+    str_extract("[0-9].*") %>%
+    str_remove_all(" ") %>%
+    parse_number()
+
+  n_pages <- floor(n_hits / 10)
+  
+  message("The number of pages is: ", n_pages)
+
+  n_pages
+}
+
+```
+
+List of all the links
+
+
+```{r}
+year_search <- 1830
+base_url <- paste0("https://sok.stadsarkivet.stockholm.se/Databas/mantalsregister-1800-1884/Sok?sidindex=21&artal=", year_search)
 start_page <- 0
-n_pages <- 4583
+
+n_pages <- get_n_pages(base_url)
 
 list_of_pages <- tibble(url = paste0("https://sok.stadsarkivet.stockholm.se/Databas/mantalsregister-1800-1884/Sok?sidindex=",
-                                     start_page:n_pages, "&artal=1800"),
+                                     start_page:n_pages, "&artal=", year_search),
                         # make a page number just in case we want to check back later
                         # store it just as a number as this is small for file size sake.
                         page = start_page:n_pages)
@@ -85,7 +112,7 @@ purrr::map takes our url and applies the function to it methodically.
 
 ```{r}
 df <- list_of_pages %>% 
-  head(3) %>% 
+  # filter(between(row_number(),3000, 5000)) %>%
   mutate(data = map(url, possibly(get_table_data, "failed"))) %>% 
   # we don't have to keep the url as it provides no more information than page.
   select(!url)
@@ -94,10 +121,10 @@ df <- list_of_pages %>%
 Save data!
 
 ```{r}
-df <- df %>% 
+df <- df %>%
   filter(!data == "failed")
 
-st <- format(Sys.time(), "%Y-%m-%d-%I-%M-%p") 
+st <- format(Sys.time(), "%Y-%m-%d-%I-%M-%p")
 
-df %>% write_rds(paste0("data/df_1800", st, ".rds"), compress = "gz")
+df %>% write_rds(paste0("data/df_", year_search, st, ".rds"), compress = "gz")
 ```

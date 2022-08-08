@@ -73,9 +73,10 @@ get_table_data <- function(url) {
 ## ----------------------------------------------------------------------
 start_page <- 0
 n_pages <- 4583
+year_search <- 1810
 
 list_of_pages <- tibble(url = paste0("https://sok.stadsarkivet.stockholm.se/Databas/mantalsregister-1800-1884/Sok?sidindex=",
-                                     start_page:n_pages, "&artal=1800"),
+                                     start_page:n_pages, "&artal=", year_search),
                         # make a page number just in case we want to check back later
                         # store it just as a number as this is small for file size sake.
                         page = start_page:n_pages)

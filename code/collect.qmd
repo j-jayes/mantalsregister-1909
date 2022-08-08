@@ -1,0 +1,77 @@
+---
+title: "Untitled"
+format: html
+---
+
+
+```{r}
+library(tidyverse)
+```
+
+## Purpose
+
+Collect that data scraped so far and share it with anton
+
+```{r}
+list_of_files <- list.files(path = here::here("data/"), pattern = ".rds")
+
+get_data_from_year <- function(yr) {
+  df_ <- list_of_files %>%
+    as_tibble() %>%
+    mutate(value = str_c("data/", value)) %>%
+    filter(str_detect(value, yr)) %>%
+    pull(value) %>%
+    map_dfr(read_rds)
+}
+
+get_data_from_year("1820")
+
+df <- list_of_files %>%
+    as_tibble() %>%
+    mutate(value = str_c("data/", value)) %>%
+    # filter(str_detect(value, "1820")) %>%
+    pull(value) %>% 
+    map_dfr(read_rds) 
+  
+df <- df %>% 
+  unnest(data) %>% 
+  arrange(year, page)
+```
+
+
+## Data cleaning
+
+
+```{r}
+df <- df %>%
+  mutate(
+    across(c(first_name, surname), str_squish),
+    across(c(first_name, surname), ~ str_remove(.x, "\\/"))
+  )
+
+df <- df %>%
+  mutate(full_name = str_c(first_name, " ", surname))
+
+
+```
+
+## Export data for Anton
+
+```{r}
+
+```
+
+
+
+## Where are the J Lindströms?
+
+```{r}
+
+df %>% 
+  count(year, full_name, sort = T)
+
+df %>% 
+  filter(full_name == "J Lindström") %>% 
+  arrange(district, year) %>% view()
+```
+
