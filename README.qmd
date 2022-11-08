@@ -1,6 +1,8 @@
 ---
 title: "Readme"
 format: gfm
+execute: 
+  echo: false
 ---
 
 # Mantalsregister 1909
@@ -13,13 +15,106 @@ It could be interesting to do some geo-coding of this data to look at how techno
 
 [Link](https://sok.stadsarkivet.stockholm.se/Databas/mantalsregister-1909/Sok?sidindex=0)
 
-## Data
+## Source
 
 It is digitized and in a nice table on the website of Stockholm city archives.
 
 This is what it looks like:
 
 ![](images/table.PNG)
+
+## Data
+
+If you want the data, you can download it as:
+
+```{r}
+library(tidyverse)
+library(gt)
+theme_set(theme_light())
+
+list_of_files <- list.files(path = here::here("data/"), pattern = ".rds")
+
+get_data_from_year <- function(yr) {
+  df_ <- list_of_files %>%
+    as_tibble() %>%
+    mutate(value = str_c("data/", value)) %>%
+    filter(str_detect(value, yr)) %>%
+    pull(value) %>%
+    map_dfr(read_rds)
+}
+
+get_data_from_year("1830")
+
+df <- list_of_files %>%
+    as_tibble() %>%
+    mutate(value = str_c("data/", value)) %>%
+    # filter(str_detect(value, "1820")) %>%
+    pull(value) %>% 
+    map_dfr(read_rds) 
+  
+df <- df %>% 
+  unnest(data) %>% 
+  arrange(year, page)
+
+df <- df %>% distinct()
+
+## Data cleaning
+# df <- df %>%
+#   mutate(
+#     across(c(first_name, surname), str_squish),
+#     across(c(first_name, surname), ~ stringi::stri_trans_general(.x, "latin-ascii")
+#   ))
+
+df <- df %>%
+  mutate(full_name = str_c(first_name, " ", surname))
+
+df <- df %>% 
+  mutate(across(.cols = c(year), parse_number),
+         across(.cols = c(surname, first_name, title, other, full_name), .fns = ~ str_squish(.x)))
+
+df <- df %>% 
+  filter(!is.na(year))
+
+library(readxl)
+library(haven)
+
+df %>% 
+  write_rds(here::here("data", "export", "mantalsregister_data.rds"))
+
+df %>% 
+  write_excel_csv(here::here("data", "export", "mantalsregister_data.csv"))
+
+df %>% 
+  write_dta(here::here("data", "export", "mantalsregister_data.dta"))
+
+tibble(
+  type = c("Stata format", "CSV", "RDS"),
+  links = c(
+    "data/export/mantalsregister_data.dta",
+    "data/export/mantalsregister_data.csv",
+    "data/export/mantalsregister_data.rds"
+  ),
+  logos = c("https://media-exp1.licdn.com/dms/image/C4E33AQFPoMyNZO1lcg/productpage-logo-image_100_100/0/1631005183477?e=1668531600&v=beta&t=OuKxTQJSynxKd80UNTxaDyS4jIFA52m-1k_yskUbHUA",
+            "https://media-exp1.licdn.com/dms/image/C560BAQE88xCsONDULQ/company-logo_200_200/0/1618231291419?e=1675900800&v=beta&t=4yTnjTZWTDb0i3FMOEYEml9jCQx0uwRcg3d3lwWnOQs",
+            "https://media-exp1.licdn.com/dms/image/D560BAQGs03i7MJktbA/company-logo_200_200/0/1667394380149?e=1675900800&v=beta&t=O13s7K1oJzqEwl7iMIgQ-6XVn1wWKBBHhks_66akejw")
+) %>%
+  mutate(
+    link = glue::glue("<a href = {links}>
+                      <img src='{logos}' width='50' height='50'>
+                                   </a>"),
+    link_text = glue::glue("<a href = {links}>
+                      {type}
+                                   </a>"),
+    link = purrr::map(link, gt::html),
+    link_text = purrr::map(link_text, gt::html)
+  ) %>%
+  select(link, link_text) %>%
+  gt() %>%
+  cols_align(columns = c(link, link_text), align = "left") %>% 
+  tab_options(column_labels.hidden = TRUE) %>% 
+  tab_header(title = md("**Download data**"))
+```
+
 
 ## Scraping
 
@@ -28,8 +123,6 @@ The scraper is in in the [code folder](code/03-scraper.qmd).
 ### Records
 
 ```{r}
-library(tidyverse)
-library(gt)
 
 records <- c("1800 - 45838
 1810 - 40003
@@ -41,16 +134,48 @@ records <- c("1800 - 45838
 1870 - 73899
 1880 - 111130")
 
-records %>%
+records <- records %>%
   as_tibble() %>%
   separate_rows(value, sep = "\n") %>%
   separate(value, into = c("year", "n_records")) %>%
-  mutate(across(everything(), parse_number)) %>%
+  mutate(across(everything(), parse_number))
+
+records %>% 
   gt() %>%
-  fmt_number(columns = c(n_records), decimals = 0, sep_mark = " ")
+  fmt_number(columns = c(n_records), decimals = 0, sep_mark = " ") %>% 
+  cols_label(year = "Year",
+             n_records = "Number of records") %>% 
+  tab_header(title = "Number of records per year")
+
+records %>% 
+  ggplot(aes(year, n_records)) +
+  geom_line() +
+  scale_x_continuous(breaks = base::seq(from = 1800, to = 1880, by = 10)) +
+  scale_y_continuous(labels = scales::number_format()) +
+  labs(x = "Year",
+       y = "Number of records")
 
 ```
 
 
+## Summary statistics
+
+
+```{r}
+library(tidytext)
+
+df %>%
+  group_by(year) %>%
+  count(title) %>%
+  slice_max(n, n = 12) %>%
+  ungroup() %>%
+  mutate(title = reorder_within(title, n, year)) %>%
+  ggplot(aes(n, title, fill = factor(year))) +
+  geom_col(show.legend = F) +
+  facet_wrap(~year, scales = "free_y") +
+  scale_y_reordered() +
+  labs(title = "Most common titles by year")
+
+```
 
 

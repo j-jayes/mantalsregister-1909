@@ -36,6 +36,11 @@ df <- list_of_files %>%
 df <- df %>% 
   unnest(data) %>% 
   arrange(year, page)
+
+df <- df %>% distinct()
+
+df %>% 
+  count(year)
 ```
 
 
@@ -51,8 +56,6 @@ df <- df %>%
 
 df <- df %>%
   mutate(full_name = str_c(first_name, " ", surname))
-
-
 ```
 
 ## Export data for Anton
