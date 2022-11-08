@@ -31,31 +31,12 @@ This is what it looks like:
 
 If you want the data, you can download it as:
 
-    ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
-    ✔ ggplot2 3.3.6      ✔ purrr   0.3.5 
-    ✔ tibble  3.1.8      ✔ dplyr   1.0.10
-    ✔ tidyr   1.2.1      ✔ stringr 1.4.1 
-    ✔ readr   2.1.3      ✔ forcats 0.5.2 
-    ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-    ✖ dplyr::filter() masks stats::filter()
-    ✖ dplyr::lag()    masks stats::lag()
-
-    Warning: 12 parsing failures.
-       row col expected actual
-    260464  -- a number Första
-    260465  -- a number Första
-    260466  -- a number Första
-    260467  -- a number Första
-    260468  -- a number Första
-    ...... ... ........ ......
-    See problems(...) for more details.
-
-<div id="anhsyylhwf" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="bcuklshnkx" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#anhsyylhwf .gt_table {
+#bcuklshnkx .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -80,7 +61,7 @@ If you want the data, you can download it as:
   border-left-color: #D3D3D3;
 }
 
-#anhsyylhwf .gt_heading {
+#bcuklshnkx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -92,7 +73,7 @@ If you want the data, you can download it as:
   border-right-color: #D3D3D3;
 }
 
-#anhsyylhwf .gt_title {
+#bcuklshnkx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -104,7 +85,7 @@ If you want the data, you can download it as:
   border-bottom-width: 0;
 }
 
-#anhsyylhwf .gt_subtitle {
+#bcuklshnkx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -116,13 +97,13 @@ If you want the data, you can download it as:
   border-top-width: 0;
 }
 
-#anhsyylhwf .gt_bottom_border {
+#bcuklshnkx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#anhsyylhwf .gt_col_headings {
+#bcuklshnkx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -137,7 +118,7 @@ If you want the data, you can download it as:
   border-right-color: #D3D3D3;
 }
 
-#anhsyylhwf .gt_col_heading {
+#bcuklshnkx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -157,7 +138,7 @@ If you want the data, you can download it as:
   overflow-x: hidden;
 }
 
-#anhsyylhwf .gt_column_spanner_outer {
+#bcuklshnkx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -169,15 +150,15 @@ If you want the data, you can download it as:
   padding-right: 4px;
 }
 
-#anhsyylhwf .gt_column_spanner_outer:first-child {
+#bcuklshnkx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#anhsyylhwf .gt_column_spanner_outer:last-child {
+#bcuklshnkx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#anhsyylhwf .gt_column_spanner {
+#bcuklshnkx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -189,7 +170,7 @@ If you want the data, you can download it as:
   width: 100%;
 }
 
-#anhsyylhwf .gt_group_heading {
+#bcuklshnkx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -214,7 +195,7 @@ If you want the data, you can download it as:
   vertical-align: middle;
 }
 
-#anhsyylhwf .gt_empty_group_heading {
+#bcuklshnkx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -229,15 +210,15 @@ If you want the data, you can download it as:
   vertical-align: middle;
 }
 
-#anhsyylhwf .gt_from_md > :first-child {
+#bcuklshnkx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#anhsyylhwf .gt_from_md > :last-child {
+#bcuklshnkx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#anhsyylhwf .gt_row {
+#bcuklshnkx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -256,7 +237,7 @@ If you want the data, you can download it as:
   overflow-x: hidden;
 }
 
-#anhsyylhwf .gt_stub {
+#bcuklshnkx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -269,7 +250,7 @@ If you want the data, you can download it as:
   padding-right: 5px;
 }
 
-#anhsyylhwf .gt_stub_row_group {
+#bcuklshnkx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -283,11 +264,11 @@ If you want the data, you can download it as:
   vertical-align: top;
 }
 
-#anhsyylhwf .gt_row_group_first td {
+#bcuklshnkx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#anhsyylhwf .gt_summary_row {
+#bcuklshnkx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -297,16 +278,16 @@ If you want the data, you can download it as:
   padding-right: 5px;
 }
 
-#anhsyylhwf .gt_first_summary_row {
+#bcuklshnkx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#anhsyylhwf .gt_first_summary_row.thick {
+#bcuklshnkx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#anhsyylhwf .gt_last_summary_row {
+#bcuklshnkx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -316,7 +297,7 @@ If you want the data, you can download it as:
   border-bottom-color: #D3D3D3;
 }
 
-#anhsyylhwf .gt_grand_summary_row {
+#bcuklshnkx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -326,7 +307,7 @@ If you want the data, you can download it as:
   padding-right: 5px;
 }
 
-#anhsyylhwf .gt_first_grand_summary_row {
+#bcuklshnkx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -336,11 +317,11 @@ If you want the data, you can download it as:
   border-top-color: #D3D3D3;
 }
 
-#anhsyylhwf .gt_striped {
+#bcuklshnkx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#anhsyylhwf .gt_table_body {
+#bcuklshnkx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -349,7 +330,7 @@ If you want the data, you can download it as:
   border-bottom-color: #D3D3D3;
 }
 
-#anhsyylhwf .gt_footnotes {
+#bcuklshnkx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -363,7 +344,7 @@ If you want the data, you can download it as:
   border-right-color: #D3D3D3;
 }
 
-#anhsyylhwf .gt_footnote {
+#bcuklshnkx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -372,7 +353,7 @@ If you want the data, you can download it as:
   padding-right: 5px;
 }
 
-#anhsyylhwf .gt_sourcenotes {
+#bcuklshnkx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -386,7 +367,7 @@ If you want the data, you can download it as:
   border-right-color: #D3D3D3;
 }
 
-#anhsyylhwf .gt_sourcenote {
+#bcuklshnkx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -394,64 +375,64 @@ If you want the data, you can download it as:
   padding-right: 5px;
 }
 
-#anhsyylhwf .gt_left {
+#bcuklshnkx .gt_left {
   text-align: left;
 }
 
-#anhsyylhwf .gt_center {
+#bcuklshnkx .gt_center {
   text-align: center;
 }
 
-#anhsyylhwf .gt_right {
+#bcuklshnkx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#anhsyylhwf .gt_font_normal {
+#bcuklshnkx .gt_font_normal {
   font-weight: normal;
 }
 
-#anhsyylhwf .gt_font_bold {
+#bcuklshnkx .gt_font_bold {
   font-weight: bold;
 }
 
-#anhsyylhwf .gt_font_italic {
+#bcuklshnkx .gt_font_italic {
   font-style: italic;
 }
 
-#anhsyylhwf .gt_super {
+#bcuklshnkx .gt_super {
   font-size: 65%;
 }
 
-#anhsyylhwf .gt_footnote_marks {
+#bcuklshnkx .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#anhsyylhwf .gt_asterisk {
+#bcuklshnkx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#anhsyylhwf .gt_indent_1 {
+#bcuklshnkx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#anhsyylhwf .gt_indent_2 {
+#bcuklshnkx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#anhsyylhwf .gt_indent_3 {
+#bcuklshnkx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#anhsyylhwf .gt_indent_4 {
+#bcuklshnkx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#anhsyylhwf .gt_indent_5 {
+#bcuklshnkx .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -494,12 +475,12 @@ The scraper is in in the [code folder](code/03-scraper.qmd).
 
 ### Records
 
-<div id="kesbniasmf" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="imuqyayrov" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#kesbniasmf .gt_table {
+#imuqyayrov .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -524,7 +505,7 @@ The scraper is in in the [code folder](code/03-scraper.qmd).
   border-left-color: #D3D3D3;
 }
 
-#kesbniasmf .gt_heading {
+#imuqyayrov .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -536,7 +517,7 @@ The scraper is in in the [code folder](code/03-scraper.qmd).
   border-right-color: #D3D3D3;
 }
 
-#kesbniasmf .gt_title {
+#imuqyayrov .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -548,7 +529,7 @@ The scraper is in in the [code folder](code/03-scraper.qmd).
   border-bottom-width: 0;
 }
 
-#kesbniasmf .gt_subtitle {
+#imuqyayrov .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -560,13 +541,13 @@ The scraper is in in the [code folder](code/03-scraper.qmd).
   border-top-width: 0;
 }
 
-#kesbniasmf .gt_bottom_border {
+#imuqyayrov .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#kesbniasmf .gt_col_headings {
+#imuqyayrov .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -581,7 +562,7 @@ The scraper is in in the [code folder](code/03-scraper.qmd).
   border-right-color: #D3D3D3;
 }
 
-#kesbniasmf .gt_col_heading {
+#imuqyayrov .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -601,7 +582,7 @@ The scraper is in in the [code folder](code/03-scraper.qmd).
   overflow-x: hidden;
 }
 
-#kesbniasmf .gt_column_spanner_outer {
+#imuqyayrov .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -613,15 +594,15 @@ The scraper is in in the [code folder](code/03-scraper.qmd).
   padding-right: 4px;
 }
 
-#kesbniasmf .gt_column_spanner_outer:first-child {
+#imuqyayrov .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#kesbniasmf .gt_column_spanner_outer:last-child {
+#imuqyayrov .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#kesbniasmf .gt_column_spanner {
+#imuqyayrov .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -633,7 +614,7 @@ The scraper is in in the [code folder](code/03-scraper.qmd).
   width: 100%;
 }
 
-#kesbniasmf .gt_group_heading {
+#imuqyayrov .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -658,7 +639,7 @@ The scraper is in in the [code folder](code/03-scraper.qmd).
   vertical-align: middle;
 }
 
-#kesbniasmf .gt_empty_group_heading {
+#imuqyayrov .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -673,15 +654,15 @@ The scraper is in in the [code folder](code/03-scraper.qmd).
   vertical-align: middle;
 }
 
-#kesbniasmf .gt_from_md > :first-child {
+#imuqyayrov .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#kesbniasmf .gt_from_md > :last-child {
+#imuqyayrov .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#kesbniasmf .gt_row {
+#imuqyayrov .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -700,7 +681,7 @@ The scraper is in in the [code folder](code/03-scraper.qmd).
   overflow-x: hidden;
 }
 
-#kesbniasmf .gt_stub {
+#imuqyayrov .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -713,7 +694,7 @@ The scraper is in in the [code folder](code/03-scraper.qmd).
   padding-right: 5px;
 }
 
-#kesbniasmf .gt_stub_row_group {
+#imuqyayrov .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -727,11 +708,11 @@ The scraper is in in the [code folder](code/03-scraper.qmd).
   vertical-align: top;
 }
 
-#kesbniasmf .gt_row_group_first td {
+#imuqyayrov .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#kesbniasmf .gt_summary_row {
+#imuqyayrov .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -741,16 +722,16 @@ The scraper is in in the [code folder](code/03-scraper.qmd).
   padding-right: 5px;
 }
 
-#kesbniasmf .gt_first_summary_row {
+#imuqyayrov .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#kesbniasmf .gt_first_summary_row.thick {
+#imuqyayrov .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#kesbniasmf .gt_last_summary_row {
+#imuqyayrov .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -760,7 +741,7 @@ The scraper is in in the [code folder](code/03-scraper.qmd).
   border-bottom-color: #D3D3D3;
 }
 
-#kesbniasmf .gt_grand_summary_row {
+#imuqyayrov .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -770,7 +751,7 @@ The scraper is in in the [code folder](code/03-scraper.qmd).
   padding-right: 5px;
 }
 
-#kesbniasmf .gt_first_grand_summary_row {
+#imuqyayrov .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -780,11 +761,11 @@ The scraper is in in the [code folder](code/03-scraper.qmd).
   border-top-color: #D3D3D3;
 }
 
-#kesbniasmf .gt_striped {
+#imuqyayrov .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#kesbniasmf .gt_table_body {
+#imuqyayrov .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -793,7 +774,7 @@ The scraper is in in the [code folder](code/03-scraper.qmd).
   border-bottom-color: #D3D3D3;
 }
 
-#kesbniasmf .gt_footnotes {
+#imuqyayrov .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -807,7 +788,7 @@ The scraper is in in the [code folder](code/03-scraper.qmd).
   border-right-color: #D3D3D3;
 }
 
-#kesbniasmf .gt_footnote {
+#imuqyayrov .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -816,7 +797,7 @@ The scraper is in in the [code folder](code/03-scraper.qmd).
   padding-right: 5px;
 }
 
-#kesbniasmf .gt_sourcenotes {
+#imuqyayrov .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -830,7 +811,7 @@ The scraper is in in the [code folder](code/03-scraper.qmd).
   border-right-color: #D3D3D3;
 }
 
-#kesbniasmf .gt_sourcenote {
+#imuqyayrov .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -838,64 +819,64 @@ The scraper is in in the [code folder](code/03-scraper.qmd).
   padding-right: 5px;
 }
 
-#kesbniasmf .gt_left {
+#imuqyayrov .gt_left {
   text-align: left;
 }
 
-#kesbniasmf .gt_center {
+#imuqyayrov .gt_center {
   text-align: center;
 }
 
-#kesbniasmf .gt_right {
+#imuqyayrov .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#kesbniasmf .gt_font_normal {
+#imuqyayrov .gt_font_normal {
   font-weight: normal;
 }
 
-#kesbniasmf .gt_font_bold {
+#imuqyayrov .gt_font_bold {
   font-weight: bold;
 }
 
-#kesbniasmf .gt_font_italic {
+#imuqyayrov .gt_font_italic {
   font-style: italic;
 }
 
-#kesbniasmf .gt_super {
+#imuqyayrov .gt_super {
   font-size: 65%;
 }
 
-#kesbniasmf .gt_footnote_marks {
+#imuqyayrov .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#kesbniasmf .gt_asterisk {
+#imuqyayrov .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#kesbniasmf .gt_indent_1 {
+#imuqyayrov .gt_indent_1 {
   text-indent: 5px;
 }
 
-#kesbniasmf .gt_indent_2 {
+#imuqyayrov .gt_indent_2 {
   text-indent: 10px;
 }
 
-#kesbniasmf .gt_indent_3 {
+#imuqyayrov .gt_indent_3 {
   text-indent: 15px;
 }
 
-#kesbniasmf .gt_indent_4 {
+#imuqyayrov .gt_indent_4 {
   text-indent: 20px;
 }
 
-#kesbniasmf .gt_indent_5 {
+#imuqyayrov .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -945,14 +926,12 @@ The scraper is in in the [code folder](code/03-scraper.qmd).
 
 My scraped data shows that I have are:
 
-    Joining, by = "year"
-
-<div id="fgxdccwvst" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="edbtwuqftt" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#fgxdccwvst .gt_table {
+#edbtwuqftt .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -977,7 +956,7 @@ My scraped data shows that I have are:
   border-left-color: #D3D3D3;
 }
 
-#fgxdccwvst .gt_heading {
+#edbtwuqftt .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -989,7 +968,7 @@ My scraped data shows that I have are:
   border-right-color: #D3D3D3;
 }
 
-#fgxdccwvst .gt_title {
+#edbtwuqftt .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1001,7 +980,7 @@ My scraped data shows that I have are:
   border-bottom-width: 0;
 }
 
-#fgxdccwvst .gt_subtitle {
+#edbtwuqftt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1013,13 +992,13 @@ My scraped data shows that I have are:
   border-top-width: 0;
 }
 
-#fgxdccwvst .gt_bottom_border {
+#edbtwuqftt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fgxdccwvst .gt_col_headings {
+#edbtwuqftt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1034,7 +1013,7 @@ My scraped data shows that I have are:
   border-right-color: #D3D3D3;
 }
 
-#fgxdccwvst .gt_col_heading {
+#edbtwuqftt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1054,7 +1033,7 @@ My scraped data shows that I have are:
   overflow-x: hidden;
 }
 
-#fgxdccwvst .gt_column_spanner_outer {
+#edbtwuqftt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1066,15 +1045,15 @@ My scraped data shows that I have are:
   padding-right: 4px;
 }
 
-#fgxdccwvst .gt_column_spanner_outer:first-child {
+#edbtwuqftt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fgxdccwvst .gt_column_spanner_outer:last-child {
+#edbtwuqftt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fgxdccwvst .gt_column_spanner {
+#edbtwuqftt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1086,7 +1065,7 @@ My scraped data shows that I have are:
   width: 100%;
 }
 
-#fgxdccwvst .gt_group_heading {
+#edbtwuqftt .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1111,7 +1090,7 @@ My scraped data shows that I have are:
   vertical-align: middle;
 }
 
-#fgxdccwvst .gt_empty_group_heading {
+#edbtwuqftt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1126,15 +1105,15 @@ My scraped data shows that I have are:
   vertical-align: middle;
 }
 
-#fgxdccwvst .gt_from_md > :first-child {
+#edbtwuqftt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fgxdccwvst .gt_from_md > :last-child {
+#edbtwuqftt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fgxdccwvst .gt_row {
+#edbtwuqftt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1153,7 +1132,7 @@ My scraped data shows that I have are:
   overflow-x: hidden;
 }
 
-#fgxdccwvst .gt_stub {
+#edbtwuqftt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1166,7 +1145,7 @@ My scraped data shows that I have are:
   padding-right: 5px;
 }
 
-#fgxdccwvst .gt_stub_row_group {
+#edbtwuqftt .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1180,11 +1159,11 @@ My scraped data shows that I have are:
   vertical-align: top;
 }
 
-#fgxdccwvst .gt_row_group_first td {
+#edbtwuqftt .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fgxdccwvst .gt_summary_row {
+#edbtwuqftt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1194,16 +1173,16 @@ My scraped data shows that I have are:
   padding-right: 5px;
 }
 
-#fgxdccwvst .gt_first_summary_row {
+#edbtwuqftt .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fgxdccwvst .gt_first_summary_row.thick {
+#edbtwuqftt .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fgxdccwvst .gt_last_summary_row {
+#edbtwuqftt .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1213,7 +1192,7 @@ My scraped data shows that I have are:
   border-bottom-color: #D3D3D3;
 }
 
-#fgxdccwvst .gt_grand_summary_row {
+#edbtwuqftt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1223,7 +1202,7 @@ My scraped data shows that I have are:
   padding-right: 5px;
 }
 
-#fgxdccwvst .gt_first_grand_summary_row {
+#edbtwuqftt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1233,11 +1212,11 @@ My scraped data shows that I have are:
   border-top-color: #D3D3D3;
 }
 
-#fgxdccwvst .gt_striped {
+#edbtwuqftt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fgxdccwvst .gt_table_body {
+#edbtwuqftt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1246,7 +1225,7 @@ My scraped data shows that I have are:
   border-bottom-color: #D3D3D3;
 }
 
-#fgxdccwvst .gt_footnotes {
+#edbtwuqftt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1260,7 +1239,7 @@ My scraped data shows that I have are:
   border-right-color: #D3D3D3;
 }
 
-#fgxdccwvst .gt_footnote {
+#edbtwuqftt .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1269,7 +1248,7 @@ My scraped data shows that I have are:
   padding-right: 5px;
 }
 
-#fgxdccwvst .gt_sourcenotes {
+#edbtwuqftt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1283,7 +1262,7 @@ My scraped data shows that I have are:
   border-right-color: #D3D3D3;
 }
 
-#fgxdccwvst .gt_sourcenote {
+#edbtwuqftt .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1291,64 +1270,64 @@ My scraped data shows that I have are:
   padding-right: 5px;
 }
 
-#fgxdccwvst .gt_left {
+#edbtwuqftt .gt_left {
   text-align: left;
 }
 
-#fgxdccwvst .gt_center {
+#edbtwuqftt .gt_center {
   text-align: center;
 }
 
-#fgxdccwvst .gt_right {
+#edbtwuqftt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fgxdccwvst .gt_font_normal {
+#edbtwuqftt .gt_font_normal {
   font-weight: normal;
 }
 
-#fgxdccwvst .gt_font_bold {
+#edbtwuqftt .gt_font_bold {
   font-weight: bold;
 }
 
-#fgxdccwvst .gt_font_italic {
+#edbtwuqftt .gt_font_italic {
   font-style: italic;
 }
 
-#fgxdccwvst .gt_super {
+#edbtwuqftt .gt_super {
   font-size: 65%;
 }
 
-#fgxdccwvst .gt_footnote_marks {
+#edbtwuqftt .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#fgxdccwvst .gt_asterisk {
+#edbtwuqftt .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fgxdccwvst .gt_indent_1 {
+#edbtwuqftt .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fgxdccwvst .gt_indent_2 {
+#edbtwuqftt .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fgxdccwvst .gt_indent_3 {
+#edbtwuqftt .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fgxdccwvst .gt_indent_4 {
+#edbtwuqftt .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fgxdccwvst .gt_indent_5 {
+#edbtwuqftt .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
