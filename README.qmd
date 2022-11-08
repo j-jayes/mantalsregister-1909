@@ -145,7 +145,8 @@ records %>%
   fmt_number(columns = c(n_records), decimals = 0, sep_mark = " ") %>% 
   cols_label(year = "Year",
              n_records = "Number of records") %>% 
-  tab_header(title = "Number of records per year")
+  tab_header(title = "Number of records per year", 
+             subtitle = "On web portal")
 
 records %>% 
   ggplot(aes(year, n_records)) +
@@ -160,6 +161,25 @@ records %>%
 
 ## Summary statistics
 
+My scraped data shows that I have are:
+
+```{r}
+df %>% 
+  count(year) %>% 
+  full_join(records) %>% 
+  relocate(n_records, .before = n) %>% 
+  mutate(diff = n_records - n) %>% 
+  gt() %>% 
+  fmt_number(columns = c(n_records, n, diff), decimals = 0, sep_mark = " ") %>% 
+  cols_label(year = "Year",
+             n_records = "On web portal",
+             n = "Scraped",
+             diff = "Difference") %>% 
+  tab_header(title = "Number of records per year", 
+             subtitle = "Scraped vs web portal")
+```
+
+Most common words are
 
 ```{r}
 library(tidytext)
