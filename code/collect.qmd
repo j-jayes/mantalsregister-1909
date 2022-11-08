@@ -24,7 +24,7 @@ get_data_from_year <- function(yr) {
     map_dfr(read_rds)
 }
 
-get_data_from_year("1820")
+get_data_from_year("1830")
 
 df <- list_of_files %>%
     as_tibble() %>%

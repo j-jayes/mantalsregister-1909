@@ -1,0 +1,56 @@
+---
+title: "Readme"
+format: gfm
+---
+
+# Mantalsregister 1909
+
+## Purpose
+
+Stockholms city archive have got a nice register of people who were taxed in Stockholm in 1909 with name, date of birth, address and title. There are many observations!
+
+It could be interesting to do some geo-coding of this data to look at how technological change in the labour market resulting in changing housing patterns - did changing incomes increase segregation, drive up rental prices etc? Would tie in well with the data that Fredrik will have. What were the occupational structures like and how much economies of agglomeration were there?
+
+[Link](https://sok.stadsarkivet.stockholm.se/Databas/mantalsregister-1909/Sok?sidindex=0)
+
+## Data
+
+It is digitized and in a nice table on the website of Stockholm city archives.
+
+This is what it looks like:
+
+![](images/table.PNG)
+
+## Scraping
+
+The scraper is in in the [code folder](code/03-scraper.qmd).
+
+### Records
+
+```{r}
+library(tidyverse)
+library(gt)
+
+records <- c("1800 - 45838
+1810 - 40003
+1820 - 43416
+1830 - 38953
+1840 - 27312
+1850 - 33802
+1860 - 41264
+1870 - 73899
+1880 - 111130")
+
+records %>%
+  as_tibble() %>%
+  separate_rows(value, sep = "\n") %>%
+  separate(value, into = c("year", "n_records")) %>%
+  mutate(across(everything(), parse_number)) %>%
+  gt() %>%
+  fmt_number(columns = c(n_records), decimals = 0, sep_mark = " ")
+
+```
+
+
+
+

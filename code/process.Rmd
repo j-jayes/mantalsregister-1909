@@ -17,9 +17,12 @@ Take in all the scarped data, process it.
 ### Reading in data
 
 ```{r}
-filenames <- list.files("data", pattern = "df_1800*.rds", full.names = TRUE) %>% as_tibble() %>% 
+filenames <- list.files("data", pattern = "df_1830.*", full.names = TRUE) %>% as_tibble() %>% 
   filter(value != "data/df.rds") %>% 
   rename(filename = value)
+
+# filenames <- filenames %>% 
+#   head(1)
 ```
 
 ```{r}
@@ -31,6 +34,13 @@ df <- df %>%
   unnest(value) %>% 
   unnest(data)
 ```
+
+```{r}
+library(readxl)
+
+df %>% write_excel_csv("data/export_for_anton_1830.csv")
+```
+
 
 ### Fix readings
 

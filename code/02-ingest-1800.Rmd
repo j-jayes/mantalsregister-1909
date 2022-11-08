@@ -126,5 +126,5 @@ df <- df %>%
 
 st <- format(Sys.time(), "%Y-%m-%d-%I-%M-%p")
 
-df %>% write_rds(paste0("data/df_", year_search, st, ".rds"), compress = "gz")
+df %>% write_rds(paste0("data/df_", year_search, "_", st, ".rds"), compress = "gz")
 ```
