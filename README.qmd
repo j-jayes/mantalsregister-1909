@@ -80,19 +80,19 @@ df <- df %>%
 library(readxl)
 library(haven)
 
-df %>%
-  write_rds(here::here("data", "export", "mantalsregister_data.rds"), compress = "gz")
-
-df %>%
-  write_excel_csv(here::here("data", "export", "mantalsregister_data.csv"))
-
-df %>%
-  write_dta(here::here("stata", "mantalsregister_data.dta"))
+# df %>%
+#   write_rds(here::here("data", "export", "mantalsregister_data.rds"), compress = "gz")
+# 
+# df %>%
+#   write_excel_csv(here::here("data", "export", "mantalsregister_data.csv"))
+# 
+# df %>%
+#   write_dta(here::here("stata", "mantalsregister_data.dta"))
 
 tibble(
   type = c("Stata format", "CSV", "RDS"),
   links = c(
-    "data/export/mantalsregister_data.dta",
+    "mantalsregister_data.zip",
     "data/export/mantalsregister_data.csv",
     "data/export/mantalsregister_data.rds"
   ),
