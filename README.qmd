@@ -80,14 +80,14 @@ df <- df %>%
 library(readxl)
 library(haven)
 
-# df %>% 
-#   write_rds(here::here("data", "export", "mantalsregister_data.rds"))
-# 
-# df %>% 
-#   write_excel_csv(here::here("data", "export", "mantalsregister_data.csv"))
-# 
-# df %>% 
-#   write_dta(here::here("data", "export", "mantalsregister_data.dta"))
+df %>%
+  write_rds(here::here("data", "export", "mantalsregister_data.rds"), compress = "gz")
+
+df %>%
+  write_excel_csv(here::here("data", "export", "mantalsregister_data.csv"))
+
+df %>%
+  write_dta(here::here("stata", "mantalsregister_data.dta"))
 
 tibble(
   type = c("Stata format", "CSV", "RDS"),
@@ -114,7 +114,8 @@ tibble(
   gt() %>%
   cols_align(columns = c(link, link_text), align = "left") %>% 
   tab_options(column_labels.hidden = TRUE) %>% 
-  tab_header(title = md("**Download data**"))
+  tab_header(title = md("**Download data**")) %>% 
+  as_raw_html()
 ```
 
 
@@ -148,7 +149,8 @@ records %>%
   cols_label(year = "Year",
              n_records = "Number of records") %>% 
   tab_header(title = "Number of records per year", 
-             subtitle = "On web portal")
+             subtitle = "On web portal") %>% 
+  as_raw_html()
 
 records %>% 
   ggplot(aes(year, n_records)) +
@@ -178,7 +180,8 @@ df %>%
              n = "Scraped",
              diff = "Difference") %>% 
   tab_header(title = "Number of records per year", 
-             subtitle = "Scraped vs web portal")
+             subtitle = "Scraped vs web portal") %>% 
+  as_raw_html()
 ```
 
 Most common words are
