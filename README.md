@@ -58,8 +58,6 @@ RDS
 
 The scraper is in in the [code folder](code/03-scraper.qmd).
 
-### Records
-
 ## Summary statistics
 
 My scraped data shows that I have are:

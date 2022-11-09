@@ -121,8 +121,6 @@ tibble(
 
 The scraper is in in the [code folder](code/03-scraper.qmd).
 
-### Records
-
 ```{r}
 
 records <- c("1800 - 45838
@@ -170,6 +168,9 @@ We are still missing 1880.
 We can go back to correct 1830 and 1840. If you are in a hurry to do this, the code called [scraper](code/03-scraper.qmd) is the one you can use. It's easy to follow.
 
 ```{r}
+#| fig-height: 8
+#| fig-width: 8
+
 df %>% 
   count(year) %>% 
   full_join(records) %>% 
@@ -182,9 +183,11 @@ df %>%
   geom_line(size = 2, alpha = .5) +
   scale_x_continuous(breaks = base::seq(from = 1800, to = 1880, by = 10)) +
   scale_y_continuous(labels = scales::number_format()) +
+  scale_color_brewer(palette = "Dark2") +
   labs(x = "Year",
        y = "Number of records",
-       colour = "Source")
+       colour = "Source",
+       title = "Comparison of scraped records with data source")
 ```
 
 Most common titles in each year are:
