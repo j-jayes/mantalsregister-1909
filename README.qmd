@@ -11,9 +11,7 @@ execute:
 
 ## Purpose
 
-Stockholms city archive have got a nice register of people who were taxed in Stockholm in 1909 with name, date of birth, address and title. There are many observations!
-
-It could be interesting to do some geo-coding of this data to look at how technological change in the labour market resulting in changing housing patterns - did changing incomes increase segregation, drive up rental prices etc? Would tie in well with the data that Fredrik will have. What were the occupational structures like and how much economies of agglomeration were there?
+Scraping data from Stockholms city archive for Anton.
 
 [Link](https://sok.stadsarkivet.stockholm.se/Databas/mantalsregister-1909/Sok?sidindex=0)
 
@@ -92,7 +90,7 @@ library(haven)
 tibble(
   type = c("Stata format", "CSV", "RDS"),
   links = c(
-    "mantalsregister_data.zip",
+    "data/export/mantalsregister_data.zip",
     "data/export/mantalsregister_data.csv",
     "data/export/mantalsregister_data.rds"
   ),
@@ -143,23 +141,6 @@ records <- records %>%
   separate(value, into = c("year", "n_records")) %>%
   mutate(across(everything(), parse_number))
 
-records %>% 
-  gt() %>%
-  fmt_number(columns = c(n_records), decimals = 0, sep_mark = " ") %>% 
-  cols_label(year = "Year",
-             n_records = "Number of records") %>% 
-  tab_header(title = "Number of records per year", 
-             subtitle = "On web portal") %>% 
-  as_raw_html()
-
-records %>% 
-  ggplot(aes(year, n_records)) +
-  geom_line() +
-  scale_x_continuous(breaks = base::seq(from = 1800, to = 1880, by = 10)) +
-  scale_y_continuous(labels = scales::number_format()) +
-  labs(x = "Year",
-       y = "Number of records")
-
 ```
 
 
@@ -184,9 +165,34 @@ df %>%
   as_raw_html()
 ```
 
-Most common words are
+We are still missing 1880.
+
+We can go back to correct 1830 and 1840. If you are in a hurry to do this, the code called [scraper](code/03-scraper.qmd) is the one you can use. It's easy to follow.
 
 ```{r}
+df %>% 
+  count(year) %>% 
+  full_join(records) %>% 
+  relocate(n_records, .before = n) %>% 
+  rename(`On web portal` = n_records,
+         Scraped = n) %>% 
+  pivot_longer(-year) %>% 
+  ggplot(aes(year, value, colour = name)) +
+  geom_point(size = 4, alpha = .5) +
+  geom_line(size = 2, alpha = .5) +
+  scale_x_continuous(breaks = base::seq(from = 1800, to = 1880, by = 10)) +
+  scale_y_continuous(labels = scales::number_format()) +
+  labs(x = "Year",
+       y = "Number of records",
+       colour = "Source")
+```
+
+Most common titles in each year are:
+
+```{r}
+#| fig-height: 8
+#| fig-width: 8
+
 library(tidytext)
 
 df %>%
