@@ -75,9 +75,9 @@ df <- df %>%
 df <- df %>% 
   filter(!is.na(year))
 
-library(readxl)
-library(haven)
-
+# library(readxl)
+# library(haven)
+# 
 # df %>%
 #   write_rds(here::here("data", "export", "mantalsregister_data.rds"), compress = "gz")
 # 

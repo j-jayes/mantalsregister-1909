@@ -95,7 +95,7 @@ List of all the links
 
 
 ```{r}
-year_search <- 1870
+year_search <- 1880
 base_url <- paste0("https://sok.stadsarkivet.stockholm.se/Databas/mantalsregister-1800-1884/Sok?sidindex=21&artal=", year_search)
 start_page <- 0
 
@@ -116,11 +116,10 @@ df <- list_of_pages %>%
   mutate(data = map(url, possibly(get_table_data, "failed"))) %>% 
   # we don't have to keep the url as it provides no more information than page.
   select(!url)
-```
 
-Save data!
 
-```{r}
+# Save data!
+
 df <- df %>%
   filter(!data == "failed")
 
