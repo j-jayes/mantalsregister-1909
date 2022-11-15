@@ -216,11 +216,9 @@ df %>%
 
 There is a chunk missing in 1830 beginning at page 1416, for 376 pages.
 
-For 1840, it is missing the end pages, between 2100 and 2732.
-
 ```{r}
 df %>% 
-  filter(year %in% c(1830, 1840)) %>% 
+  filter(year %in% c(1830)) %>% 
   count(year, page) %>% 
   ggplot(aes(x = page, y = n, fill = factor(year))) +
   geom_col() +
