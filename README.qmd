@@ -163,9 +163,7 @@ df %>%
   as_raw_html()
 ```
 
-We are still missing much from 1880.
-
-We can go back to correct 1830 and 1840. If you are in a hurry to do this, the code called [scraper](code/03-scraper.qmd) is the one you can use. It's easy to follow.
+We are missing a few records as a result of errors while scraping.
 
 ```{r}
 #| fig-height: 8
@@ -209,20 +207,6 @@ df %>%
   facet_wrap(~year, scales = "free_y") +
   scale_y_reordered() +
   labs(title = "Most common titles by year")
-
-```
-
-### What records are we missing?
-
-There is a chunk missing in 1830 beginning at page 1416, for 376 pages.
-
-```{r}
-df %>% 
-  filter(year %in% c(1830)) %>% 
-  count(year, page) %>% 
-  ggplot(aes(x = page, y = n, fill = factor(year))) +
-  geom_col() +
-  facet_wrap(~ year, nrow = 3)
 
 ```
 

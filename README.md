@@ -121,20 +121,10 @@ My scraped data shows that I have are:
   
 </table>
 
-We are still missing much from 1880.
-
-We can go back to correct 1830 and 1840. If you are in a hurry to do
-this, the code called [scraper](code/03-scraper.qmd) is the one you can
-use. It’s easy to follow.
+We are missing a few records as a result of errors while scraping.
 
 ![](README_files/figure-commonmark/unnamed-chunk-4-1.png)
 
 Most common titles in each year are:
 
 ![](README_files/figure-commonmark/unnamed-chunk-5-1.png)
-
-### What records are we missing?
-
-There is a chunk missing in 1830 beginning at page 1416, for 376 pages.
-
-![](README_files/figure-commonmark/unnamed-chunk-6-1.png)
