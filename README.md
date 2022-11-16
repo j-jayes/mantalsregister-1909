@@ -128,7 +128,7 @@ when I scrape them.
 
 For example, Sven Fagerlund is repeated in 1870 on page 384.
 
-![](imarepeat_record.PNG)
+![](images/repeat_record.PNG)
 
 For this reason, the number of records differs a small amount from the
 data portal and the scraped data.
