@@ -121,7 +121,17 @@ My scraped data shows that I have are:
   
 </table>
 
-We are missing a few records as a result of errors while scraping.
+### Where are missing records??
+
+Where there are repeated records on the same page, these are removed
+when I scrape them.
+
+For example, Sven Fagerlund is repeated in 1870 on page 384.
+
+![](imarepeat_record.PNG)
+
+For this reason, the number of records differs a small amount from the
+data portal and the scraped data.
 
 ![](README_files/figure-commonmark/unnamed-chunk-4-1.png)
 

@@ -163,29 +163,36 @@ df %>%
   as_raw_html()
 ```
 
-We are missing a few records as a result of errors while scraping.
+### Where are missing records??
+
+Where there are repeated records on the same page, these are removed when I scrape them.
+
+For example, Sven Fagerlund is repeated in 1870 on page 384.
+
+![](imarepeat_record.PNG)
+
+For this reason, the number of records differs a small amount from the data portal and the scraped data.
 
 ```{r}
 #| fig-height: 8
 #| fig-width: 8
 
-df %>% 
-  count(year) %>% 
-  full_join(records) %>% 
-  relocate(n_records, .before = n) %>% 
-  rename(`On web portal` = n_records,
-         Scraped = n) %>% 
-  pivot_longer(-year) %>% 
+df %>%
+  count(year) %>%
+  rename(Scraped = n) %>%
+  pivot_longer(-year) %>%
   ggplot(aes(year, value, colour = name)) +
   geom_point(size = 4, alpha = .5) +
   geom_line(size = 2, alpha = .5) +
   scale_x_continuous(breaks = base::seq(from = 1800, to = 1880, by = 10)) +
-  scale_y_continuous(labels = scales::number_format()) +
+  scale_y_continuous(labels = scales::number_format(), limits = c(0, NA)) +
   scale_color_brewer(palette = "Dark2") +
-  labs(x = "Year",
-       y = "Number of records",
-       colour = "Source",
-       title = "Comparison of scraped records with data source")
+  labs(
+    x = "Year",
+    y = "Number of records",
+    colour = "Source",
+    title = "Number of records per year"
+  )
 ```
 
 Most common titles in each year are:
@@ -209,5 +216,4 @@ df %>%
   labs(title = "Most common titles by year")
 
 ```
-
 
