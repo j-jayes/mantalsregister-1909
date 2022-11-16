@@ -32,7 +32,7 @@ If you want the data, you can download it as:
   
   <tbody style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3;">
     <tr><td style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;"><a href = data/export/mantalsregister_data.zip>
-<img src='https://media-exp1.licdn.com/dms/image/C4E33AQFPoMyNZO1lcg/productpage-logo-image_100_100/0/1631005183477?e=1668531600&v=beta&t=OuKxTQJSynxKd80UNTxaDyS4jIFA52m-1k_yskUbHUA' width='50' height='50'>
+<img src='https://media-exp1.licdn.com/dms/image/C4E0BAQFnF6tzuFOj_g/company-logo_200_200/0/1646154438464?e=1676505600&v=beta&t=0f_MZo2gRhZPYjZFdIxKhlwWXY9POvxxsX8pEdW4rew' width='50' height='50'>
              </a></td>
 <td style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;"><a href = data/export/mantalsregister_data.zip>
 Stata format
