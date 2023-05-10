@@ -61,6 +61,7 @@ get_table_data <- function(url) {
   Sys.sleep(rnorm(1, 2, .2))
   
   table
+  
 }
 
 # test
@@ -111,19 +112,29 @@ list_of_pages <- tibble(url = paste0("https://sok.stadsarkivet.stockholm.se/Data
 purrr::map takes our url and applies the function to it methodically.
 
 ```{r}
-df <- list_of_pages %>% 
-  # filter(between(row_number(),3000, 5000)) %>%
-  mutate(data = map(url, possibly(get_table_data, "failed"))) %>% 
-  # we don't have to keep the url as it provides no more information than page.
-  select(!url)
+library(dplyr)
+library(purrr)
+library(tidyr)
 
+chunk_size <- 1000
+num_chunks <- ceiling(nrow(list_of_pages) / chunk_size)
 
-# Save data!
+for (i in 1:num_chunks) {
+  start_idx <- (i - 1) * chunk_size + 1
+  end_idx <- min(i * chunk_size, nrow(list_of_pages))
+  
+  df_chunk <- list_of_pages[start_idx:end_idx, ] %>%
+    mutate(data = map(url, possibly(get_table_data, "failed"))) %>%
+    select(!url) %>%
+    filter(!data == "failed")
+  
+  st <- format(Sys.time(), "%Y-%m-%d-%I-%M-%p")
+  
+  # Save chunked data
+  df_chunk %>% write_rds(paste0("data/birth_year/df_", st, "_chunk_", i, ".rds"), compress = "gz")
+  
+  # Optional: Pause between requests to avoid overloading the server
+  Sys.sleep(1)
+}
 
-df <- df %>%
-  filter(!data == "failed")
-
-st <- format(Sys.time(), "%Y-%m-%d-%I-%M-%p")
-
-df %>% write_rds(paste0("data/df_1855_", year_search, "_", st, ".rds"), compress = "gz")
 ```
