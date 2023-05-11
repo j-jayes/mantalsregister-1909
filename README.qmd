@@ -119,26 +119,22 @@ tibble(
 ```{r}
 # get data for Anton 1855
 
-list_of_files <- list.files(path = here::here("data", "birth_year"), pattern = ".rds")
-
-df_1855 <- list_of_files %>%
-    as_tibble() %>%
-    mutate(value = str_c("data/birth_year/", value)) %>%
-    pull(value) %>%
-    map_dfr(read_rds)
-
-df_1855 %>% 
-  unnest(data) %>% 
-  write_excel_csv(here::here("data", "export", "mantalsregister_data_1855.csv"))
+# list_of_files <- list.files(path = here::here("data", "birth_year"), pattern = ".rds")
+# 
+# df_1855 <- list_of_files %>%
+#     as_tibble() %>%
+#     mutate(value = str_c("data/birth_year/", value)) %>%
+#     pull(value) %>%
+#     map_dfr(read_rds)
+# 
+# df_1855 %>% 
+#   unnest(data) %>% 
+#   write_excel_csv(here::here("data", "export", "mantalsregister_data_1855.csv"))
 ```
 
+### 1855 data including birth year
 
-The data from 1855 also has birth year included. I have scraped this in a separeate file and link it for download [here in excel format]().
-
-```{r}
-
-```
-
+The data from 1855 also has birth year included. I have scraped this in a separeate file and link it for download [here in excel format](data/export/mantalsregister_data_1855.xlsx).
 
 ## Scraping
 
