@@ -119,7 +119,7 @@ library(tidyr)
 chunk_size <- 1000
 num_chunks <- ceiling(nrow(list_of_pages) / chunk_size)
 
-for (i in 1:num_chunks) {
+for (i in 4:num_chunks) {
   start_idx <- (i - 1) * chunk_size + 1
   end_idx <- min(i * chunk_size, nrow(list_of_pages))
   
